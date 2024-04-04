@@ -1,30 +1,31 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SimonShould {
 
+  private Simon simon;
+  @BeforeEach
+  void setUp() {
+    this.simon = new Simon();
+  }
+
 	@Test
 	void whenSimonSaysYellowAndUserSaysYThenReturnsTrue() {
-    var simon = new Simon();
-		assertTrue(simon.checkResponse("yellow", "y"));
+		assertTrue(this.simon.checkResponse("yellow", "y"));
 	}
-
-  @Test
-  void whenSimonSaysGreenAndUserSaysYThenReturnsFalse() {
-    var simon = new Simon();
-    assertFalse(simon.checkResponse("green", "y"));
-  }
-
   @Test
   void whenSimonSaysGreenAndUserSaysGThenReturnsTrue() {
-    var simon = new Simon();
-    assertTrue(simon.checkResponse("green", "g"));
+    assertTrue(this.simon.checkResponse("green", "g"));
   }
-
-  @Test
-  void whenSimonSaysYellowAndRedWhenYAndGThenReturnsFalse() {
-    var simon = new Simon();
-    assertFalse(simon.checkResponse("yellow red", "y g"));
+  
+  @ParameterizedTest
+  @CsvSource({"yellow red, y g", "green, y"})
+  void whenTheUserLosesThenReturnsFalse(String simon, String user) {
+    assertFalse(this.simon.checkResponse(simon, user));
   }
 }
