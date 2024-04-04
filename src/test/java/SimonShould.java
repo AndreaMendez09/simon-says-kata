@@ -16,11 +16,11 @@ public class SimonShould {
     assertFalse(simon.checkResponse("green", "y"));
   }
 
-  /*@Test
+  @Test
   void whenSimonSaysGreenAndUserSaysGThenReturnsTrue() {
     var simon = new Simon();
     assertTrue(simon.checkResponse("green", "g"));
-  }*/
+  }
 
   /*@Test
   void whenSimonSaysGreenAndUserSaysYThenReturnsFalse() {
