@@ -24,7 +24,7 @@ public class SimonShould {
   }
 
   @ParameterizedTest
-  @CsvSource({"yellow red,  y g", "green, y", "red, g"})
+  @CsvSource({"yellow red,  y g", "green, y", "red, g", "blue, r"})
   void whenTheUserLosesThenReturnsFalse(String simon, String user) {
     assertFalse(this.simon.checkResponse(simon, user));
   }

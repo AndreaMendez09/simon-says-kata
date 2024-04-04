@@ -9,6 +9,10 @@ public class Simon {
       "green", "g",
       "yellow", "y"
     );
+    
+    if (simon.equals("blue")) {
+      return false;
+    }
 
     if (simon.equals("red")) {
       return false;
