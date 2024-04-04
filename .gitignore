@@ -1,5 +1,6 @@
-/nbproject
-/ruby/nbproject
+/bin/
 .idea
-.classpath
-.vscode
+target
+java-test-bootstrap.iml
+
+.mvn/wrapper/maven-wrapper.jar
