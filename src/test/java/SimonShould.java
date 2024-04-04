@@ -22,9 +22,9 @@ public class SimonShould {
   void whenSimonSaysGreenAndUserSaysGThenReturnsTrue() {
     assertTrue(this.simon.checkResponse("green", "g"));
   }
-  
+
   @ParameterizedTest
-  @CsvSource({"yellow red, y g", "green, y"})
+  @CsvSource({"yellow red,  y g", "green, y", "red, g"})
   void whenTheUserLosesThenReturnsFalse(String simon, String user) {
     assertFalse(this.simon.checkResponse(simon, user));
   }
