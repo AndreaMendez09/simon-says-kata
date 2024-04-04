@@ -22,9 +22,9 @@ public class SimonShould {
     assertTrue(simon.checkResponse("green", "g"));
   }
 
-  /*@Test
-  void whenSimonSaysGreenAndUserSaysYThenReturnsFalse() {
+  @Test
+  void whenSimonSaysYellowAndRedWhenYAndGThenReturnsFalse() {
     var simon = new Simon();
-    assertFalse(simon.checkResponse("yellow green", "y g"));
-  }*/
+    assertFalse(simon.checkResponse("yellow red", "y g"));
+  }
 }
